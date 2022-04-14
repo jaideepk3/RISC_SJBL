@@ -739,7 +739,102 @@ if inp(15 down to 12) = "1000" then
         --  t3 = inp(5) & "0000000000" & inp(4 downto 0)
         --  if t1 = t2 then
         --      r7 = r7 + t3
+-- JAL function
+if inp(15 downto 12) = "1001" then
+    --  t3 = inp(5) & "0000000000" & inp(4 downto 0)
+    --      r7 = r7 + t3;
 
+    t3 = r7 + 1;
+    if inp(11 downto 9) = "000" then
+    	r0 := t3;	
+	elsif inp(11 downto 9) = "001" then
+		r1 := t3;
+	elsif inp(11 downto 9) = "010" then
+		r2 := t3;
+	elsif inp(11 downto 9) = "011" then
+		r3:= t3;
+	elsif inp(11 downto 9) = "100" then
+		r4:= t3;
+	elsif inp(11 downto 9) = "101" then
+		r5:= t3;
+	elsif inp(11 downto 9) = "110" then
+		r6:= t3;
+	elsif inp(11 downto 9) = "111" then
+		r7:= t3;
+	end if;
+
+
+
+
+-- JLR function
+if inp(15 downto 12) = "1010" then
+    if inp(8 downto 6) = "000" then
+        t2 := r0;
+    elsif inp(8 downto 6) = "001" then
+        t2 := r1;
+    elsif inp(8 downto 6) = "010" then
+        t2 := r2;
+    elsif inp(8 downto 6) = "011" then
+        t2 := r3;
+    elsif inp(8 downto 6) = "100" then
+        t2 := r4;
+    elsif inp(8 downto 6) = "101" then
+      	t2 := r5;
+    elsif inp(8 downto 6) = "110" then
+        t2 := r6;
+    elsif inp(8 downto 6) = "111" then
+    	t2 := r7;
+    end if;
+
+    r7 := t2;
+
+    t3 = r7 + 1;
+
+    if inp(11 downto 9) = "000" then
+    	r0 := t3;	
+    elsif inp(11 downto 9) = "001" then
+	r1 := t3;
+    elsif inp(11 downto 9) = "010" then
+	r2 := t3;
+    elsif inp(11 downto 9) = "011" then
+	r3:= t3;
+    elsif inp(11 downto 9) = "100" then
+	r4:= t3;
+    elsif inp(11 downto 9) = "101" then
+	r5:= t3;
+    elsif inp(11 downto 9) = "110" then
+	r6:= t3;
+    elsif inp(11 downto 9) = "111" then
+	r7:= t3;
+    end if;
+
+
+
+-- JRI function
+if inp(15 downto 12) = "1011" then
+    if inp(11 downto 9) = "000" then
+        t1 := r0;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r1;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r2;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r3;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r4;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r5;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r6;
+    elsif inp(11 downto 9) = "000" then
+        t1 := r7;
+    end if;
+
+    t2 := inp(5) & "0000000000" & inp(4 downto 0);
+    -- t3 = t2 + t1;
+    r7 = t3;
+    
+    
 
 	       
 
