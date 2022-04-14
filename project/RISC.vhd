@@ -35,17 +35,17 @@ begin
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+				t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+				t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+				t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+				t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+				t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+				t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp(8 downto 6) = "000" then
@@ -53,17 +53,17 @@ begin
 			elsif inp( 8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+				t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+				t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+				t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+				t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+				t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -106,17 +106,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+				t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+				t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+				t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+				t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			   	t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			   	t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp(8 downto 6) = "000" then
@@ -124,17 +124,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+			   	t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+				t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+			   	t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+			   	t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -147,17 +147,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(5 downto 3) = "001" then
 				r1 := t3;
 			elsif inp(5 downto 3) = "010" then
-			   r2 := t3;
+			  	 r2 := t3;
 			elsif inp(5 downto 3) = "011" then
-			   r3 := t3;
+			   	r3 := t3;
 			elsif inp(5 downto 3) = "100" then
-			   r4 := t3;
+			   	r4 := t3;
 			elsif inp(5 downto 3) = "101" then
-			   r5 := t3;
+			   	r5 := t3;
 			elsif inp(5 downto 3) = "110" then
-			   r6 := t3;
+			   	r6 := t3;
 			elsif inp(5 downto 3) = "111" then
-			   r7 := t3;
+			   	r7 := t3;
 			end if;
 			-- Found Rc
 			 
@@ -177,17 +177,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+			   	t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+			   	t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+			   	t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+			   	t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			   	t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			   	t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp( 8 downto 6) = "000" then
@@ -195,17 +195,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+			   	t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+			   	t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+			   	t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+			   	t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -218,17 +218,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(5 downto 3) = "001" then
 				r1 := t3;
 			elsif inp(5 downto 3) = "010" then
-			   r2 := t3;
+			   	r2 := t3;
 			elsif inp(5 downto 3) = "011" then
-			   r3 := t3;
+			   	r3 := t3;
 			elsif inp(5 downto 3) = "100" then
-			   r4 := t3;
+			   	r4 := t3;
 			elsif inp(5 downto 3) = "101" then
-			   r5 := t3;
+			   	r5 := t3;
 			elsif inp(5 downto 3) = "110" then
-			   r6 := t3;
+			   	r6 := t3;
 			elsif inp(5 downto 3) = "111" then
-			   r7 := t3;
+			   	r7 := t3;
 			end if;
 			-- Found Rc
 			 
@@ -248,17 +248,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+			   	t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+			   	t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+			   	t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+			   	t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			   	t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			   	t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp(8 downto 6) = "000" then
@@ -266,17 +266,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+			   	t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+			   	t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+			   	t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+			   	t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -289,17 +289,17 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(5 downto 3) = "001" then
 				r1:= t3;
 			elsif inp(5 downto 3) = "010" then
-			   r2 := t3;
+			   	r2 := t3;
 			elsif inp(5 downto 3) = "011" then
-			   r3:= t3;
+			   	r3:= t3;
 			elsif inp(5 downto 3 ) = "100" then
-			   r4:= t3;
+			   	r4:= t3;
 			elsif inp(5 downto 3) = "101" then
-			   r5:= t3;
+			   	r5:= t3;
 			elsif inp(5 downto 3) = "110" then
-			   r6 := t3;
+			   	r6 := t3;
 			elsif inp(5 downto 3) = "111" then
-			   r7 := t3;
+			   	r7 := t3;
 			end if;
 			-- Found Rc
 			 
@@ -319,17 +319,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+			   	t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+			   	t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+			   	t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+			   	t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			   	t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			   	t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp(8 downto 6) = "000" then
@@ -337,17 +337,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+			   	t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+			  	t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+			   	t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+			   	t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -360,17 +360,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(5 downto 3) = "001" then
 				r1 := t3;
 			elsif inp(5 downto 3) = "010" then
-			   r2:= t3;
+			   	r2:= t3;
 			elsif inp(5 downto 3) = "011" then
-			   r3:= t3;
+			   	r3:= t3;
 			elsif inp(5 downto 3) = "100" then
-			   r4:= t3;
+			   	r4:= t3;
 			elsif inp(5 downto 3) = "101" then
-			   r5:= t3;
+			   	r5:= t3;
 			elsif inp(5 downto 3) = "110" then
-			   r6:= t3;
+			   	r6:= t3;
 			elsif inp(5 downto 3) = "111" then
-			   r7:= t3;
+			   	r7:= t3;
 			end if;
 			-- Found Rc
 			 
@@ -390,17 +390,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+			   	t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+			   	t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+			   	t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+			   	t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			   	t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			   	t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp(8 downto 6) = "000" then
@@ -408,17 +408,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+			   	t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+			   	t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+			   	t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+			   	t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -431,17 +431,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(5 downto 3) = "001" then
 				r1 := t3;
 			elsif inp(5 downto 3) = "010" then
-			   r2:= t3;
+			   	r2:= t3;
 			elsif inp(5 downto 3) = "011" then
-			   r3:= t3;
+			   	r3:= t3;
 			elsif inp(5 downto 3) = "100" then
-			   r4:= t3;
+			   	r4:= t3;
 			elsif inp(5 downto 3) = "101" then
-			   r5:= t3;
+			   	r5:= t3;
 			elsif inp(5 downto 3) = "110" then
-			   r6:= t3;
+			   	r6:= t3;
 			elsif inp(5 downto 3) = "111" then
-			   r7:= t3;
+			   	r7:= t3;
 			end if;
 			-- Found Rc
 			 
@@ -461,17 +461,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(11 downto 9) = "001" then
 				t1 := r1;
 			elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+			   	t1 := r2;
 			elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+			   	t1 := r3;
 			elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+			   	t1 := r4;
 			elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+			   	t1 := r5;
 			elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			   	t1 := r6;
 			elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			   	t1 := r7;                               
 			end if;
 			-- Found Ra
 			if inp(8 downto 6) = "000" then
@@ -479,17 +479,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(8 downto 6) = "001" then
 				t2 := r1;
 			elsif inp(8 downto 6) = "010" then
-			   t2 := r2;
+			   	t2 := r2;
 			elsif inp(8 downto 6) = "011" then
-			   t2 := r3;
+			   	t2 := r3;
 			elsif inp(8 downto 6) = "100" then
 				t2 := r4;
 			elsif inp(8 downto 6) = "101" then
-			   t2 := r5;
+			   	t2 := r5;
 			elsif inp(8 downto 6) = "110" then
-			   t2 := r6;
+			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
-			   t2 := r7;
+			   	t2 := r7;
 			end if;b
 			-- Found R
 			 
@@ -502,17 +502,17 @@ if inp (15 downto 12) = "0010"  then
 			elsif inp(5 downto 3) = "001" then
 				r1 := t3;
 			elsif inp(5 downto 3) = "010" then
-			   r2 := t3;
+			   	r2 := t3;
 			elsif inp(5 downto 3) = "011" then
-			   r3:= t3;
+			   	r3:= t3;
 			elsif inp(5 downto 3) = "100" then
-			   r4:= t3;
+			   	r4:= t3;
 			elsif inp(5 downto 3) = "101" then
-			   r5:= t3;
+			   	r5:= t3;
 			elsif inp(5 downto 3) = "110" then
-			   r6:= t3;
+			   	r6:= t3;
 			elsif inp(5 downto 3) = "111" then
-			   r7:= t3;
+			   	r7:= t3;
 			end if;
 			-- Found Rc
 			 
@@ -523,21 +523,21 @@ if inp (15 downto 12) = "0010"  then
  --ADI function	
 if inp (15 downto 12) = "0000"  then 
 		if inp(11 downto 9) = "000" then
-				t1 := r0;
+			t1 := r0;
 		elsif inp(11 downto 9) = "001" then
-				t1 := r1;
+			t1 := r1;
 		elsif inp(11 downto 9) = "010" then
-			   t1 := r2;
+			t1 := r2;
 		elsif inp(11 downto 9) = "011" then
-			   t1 := r3;
+			t1 := r3;
 		elsif inp(11 downto 9) = "100" then
-			   t1 := r4;
+			t1 := r4;
 		elsif inp(11 downto 9) = "101" then
-			   t1 := r5;
+			t1 := r5;
 		elsif inp(11 downto 9) = "110" then
-			   t1 := r6;
+			t1 := r6;
 		elsif inp(11 downto 9) = "111" then
-			   t1 := r7;                               
+			t1 := r7;                               
 		end if;
 			-- Found Ra			 
 		  
@@ -555,21 +555,21 @@ if inp (15 downto 12) = "0000"  then
       -- store the t3 value in coresponding register
 		
 		if inp(8 downto 6) = "000" then
-				r0 := t3;	
+			r0 := t3;	
 		elsif inp(8 downto 6) = "001" then
-				r1 := t3;
+			r1 := t3;
 		elsif inp(8 downto 6) = "010" then
-			   r2 := t3;
+			r2 := t3;
 		elsif inp(8 downto 6) = "011" then
-			   r3:= t3;
+			r3:= t3;
 		elsif inp(8 downto 6) = "100" then
-			   r4:= t3;
+			r4:= t3;
 		elsif inp(8 downto 6) = "101" then
-			   r5:= t3;
+			r5:= t3;
 		elsif inp(8 downto 6) = "110" then
-			   r6:= t3;
+			r6:= t3;
 		elsif inp(8 downto 6) = "111" then
-			   r7:= t1;
+			r7:= t1;
 		end if;
 			-- Found Rb
 			 
@@ -580,21 +580,21 @@ if inp (15 downto 12) = "0011"  then
 
 	-- load t1 to register
 		if inp(11 downto 9) = "000" then
-				r0 := t3;	
+			r0 := t3;	
 		elsif inp(11 downto 9) = "001" then
-				r1 := t3;
+			r1 := t3;
 		elsif inp(11 downto 9) = "010" then
-			   r2 := t3;
+			r2 := t3;
 		elsif inp(11 downto 9) = "011" then
-			   r3:= t3;
+			r3:= t3;
 		elsif inp(11 downto 9) = "100" then
-			   r4:= t3;
+			r4:= t3;
 		elsif inp(11 downto 9) = "101" then
-			   r5:= t3;
+			r5:= t3;
 		elsif inp(11 downto 9) = "110" then
-			   r6:= t3;
+			r6:= t3;
 		elsif inp(11 downto 9) = "111" then
-			   r7:= t3;
+			r7:= t3;
 		end if;
 	-- found Ra
 		
