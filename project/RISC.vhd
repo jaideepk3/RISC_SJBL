@@ -696,7 +696,51 @@ end if;
    mem_loc_int <= to_integer(unsigned(mem_location));
     MM((mem_loc_int+15) downto mem_loc_int)) := t1;
 end if;
-			
+
+--BEQ function
+if inp(15 down to 12) = "1000" then
+    -- load t1 with register A
+        if inp(11 downto 9) = "000" then
+            t1 := r0;
+        elsif inp(11 down to 9) = "001" then
+            t1 := r1;
+        elsif inp(11 down to 9) = "010" then
+            t1 := r2;
+        elsif inp(11 down to 9) = "011" then
+            t1 := r3;
+        elsif inp(11 down to 9) = "100" then
+            t1 := r4;
+        elsif inp(11 down to 9) = "101" then
+            t1 := r5;
+        elsif inp(11 down to 9) = "110" then
+            t1 := r6;
+        elsif inp(11 down to 9) = "111" then
+            t1 := r7;
+        end if;
+    -- load t2 with register B
+        if inp(8 downto 6) = "000" then
+            t2 := r0;
+        elsif inp(8 downto 6) = "001" then
+            t2 := r1;
+        elsif inp(8 downto 6) = "010" then
+            t2 := r2;
+        elsif inp(8 downto 6) = "011" then
+            t2 := r3;
+        elsif inp(8 downto 6) = "100" then
+            t2 := r4;
+        elsif inp(8 downto 6) = "101" then
+            t2 := r5;
+        elsif inp(8 downto 6) = "110" then
+            t2 := r6;
+        elsif inp(8 downto 6) = "111" then
+            t2 := r7;
+        end if;	
+        
+        --  t3 = inp(5) & "0000000000" & inp(4 downto 0)
+        --  if t1 = t2 then
+        --      r7 = r7 + t3
+
+
 	       
 
 
