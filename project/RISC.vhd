@@ -603,7 +603,7 @@ end if ;
 	
 --LW function
 if inp(15 downto 12) = "0111" then
-	t1 := "0000000000" & inp(5 downto 0);
+	t1 := inp(5) & "0000000000" & inp(4 downto 0);
   --load t2 with register
        if inp(8 downto 6) = "000" then
 		t2 := r0;
@@ -650,8 +650,10 @@ if inp(15 downto 12) = "0111" then
 	-- found Ra
 end if;
   
-     
-   
+--SW function
+   if inp(15 downto 12) = "0101" then  
+     t1 := inp(5) & "00000000" & inp(4 downto 0);
+			
 	       
 
 
