@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use IEEE.numeric_std.all;
 
 entity RISC is 
  port ( inp : in std_logic_vector(15 downto 0);
