@@ -490,7 +490,7 @@ if inp (15 downto 12) = "0010"  then
 			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
 			   	t2 := r7;
-			end if;b
+			end if;
 			-- Found R
 			 
 			-- get t3 by passing t1 and t2 to alu
@@ -576,9 +576,9 @@ if inp (15 downto 12) = "0000"  then
 end if ;
  --LHI function
 if inp (15 downto 12) = "0011"  then 
-		t1 := inp(8 downto 0) & "0000000" ;
+		t3 := inp(8 downto 0) & "0000000" ;
 
-	-- load t1 to register
+	-- load t3 to register
 		if inp(11 downto 9) = "000" then
 			r0 := t3;	
 		elsif inp(11 downto 9) = "001" then
@@ -599,6 +599,59 @@ if inp (15 downto 12) = "0011"  then
 	-- found Ra
 		
 end if ;	
+	
+--LW function
+if inp(15 downto 12) = "0111" then
+	t1 := "0000000000" & inp(5 downto 0);
+  --load t2 with register
+       if inp(8 downto 6) = "000" then
+		t2 := r0;
+      elsif inp(8 downto 6) = "001" then
+		t2 := r1;
+      elsif inp(8 downto 6) = "010" then
+	        t2 := r2;
+      elsif inp(8 downto 6) = "011" then
+	        t2 := r3;
+      elsif inp(8 downto 6) = "100" then
+		t2 := r4;
+      elsif inp(8 downto 6) = "101" then
+	   	t2 := r5;
+      elsif inp(8 downto 6) = "110" then
+	        t2 := r6;
+      elsif inp(8 downto 6) = "111" then
+	 	t2 := r7;
+       end if;	
+	       --ADD t2 and t1;
+	       --t3=t2+t1;
+   signal mem_location : std_logic_vector(15 downto 0);
+   signal mem_loc_int : integer;
+        mem_location := t3;
+   mem_loc_int <= to_integer(unsigned(mem_location));
+   t3 := MM((mem_loc_int+15) downto mem_loc_int));
+-- load t3 to register
+		if inp(11 downto 9) = "000" then
+			r0 := t3;	
+		elsif inp(11 downto 9) = "001" then
+			r1 := t3;
+		elsif inp(11 downto 9) = "010" then
+			r2 := t3;
+		elsif inp(11 downto 9) = "011" then
+			r3:= t3;
+		elsif inp(11 downto 9) = "100" then
+			r4:= t3;
+		elsif inp(11 downto 9) = "101" then
+			r5:= t3;
+		elsif inp(11 downto 9) = "110" then
+			r6:= t3;
+		elsif inp(11 downto 9) = "111" then
+			r7:= t3;
+		end if;
+	-- found Ra
+end if;
+  
+     
+   
+	       
 
 
 end architecture ;
