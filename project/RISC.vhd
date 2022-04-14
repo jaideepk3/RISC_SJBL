@@ -652,7 +652,50 @@ end if;
   
 --SW function
    if inp(15 downto 12) = "0101" then  
-     t1 := inp(5) & "00000000" & inp(4 downto 0);
+     t1 := inp(5) & "0000000000" & inp(4 downto 0);
+ --load t2 with register
+       if inp(8 downto 6) = "000" then
+		t2 := r0;
+      elsif inp(8 downto 6) = "001" then
+		t2 := r1;
+      elsif inp(8 downto 6) = "010" then
+	        t2 := r2;
+      elsif inp(8 downto 6) = "011" then
+	        t2 := r3;
+      elsif inp(8 downto 6) = "100" then
+		t2 := r4;
+      elsif inp(8 downto 6) = "101" then
+	   	t2 := r5;
+      elsif inp(8 downto 6) = "110" then
+	        t2 := r6;
+      elsif inp(8 downto 6) = "111" then
+	 	t2 := r7;
+       end if;	
+	     --ADD t2 and t1;
+	       --t3=t2+t1;
+	       
+	       
+       if inp(11 downto 9) = "000" then
+		t1 := r0;
+      elsif inp(11 downto 9) = "001" then
+		t1 := r1;
+      elsif inp(11 downto 9) = "010" then
+	        t1 := r2;
+      elsif inp(11 downto 9) = "011" then
+	        t1 := r3;
+      elsif inp(11 downto 9) = "100" then
+		t1 := r4;
+      elsif inp(11 downto 9) = "101" then
+	   	t1 := r5;
+      elsif inp(11 downto 9) = "110" then
+	        t1 := r6;
+      elsif inp(11 downto 9) = "111" then
+	 	t1 := r7;
+       end if;	
+ mem_location := t3;
+   mem_loc_int <= to_integer(unsigned(mem_location));
+    MM((mem_loc_int+15) downto mem_loc_int)) := t1;
+end if;
 			
 	       
 
