@@ -29,7 +29,7 @@ begin
 	--ADD function
 	if inp (15 downto 12) = "0001"  then 
 	
-		if inp ( 1 downto 0) = "00") then
+		if inp ( 1 downto 0) = "00" then
 			if inp(11 downto 8) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
