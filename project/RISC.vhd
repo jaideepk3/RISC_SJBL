@@ -282,11 +282,12 @@ if inp (15 downto 12) = "0001"  then
 			elsif inp(8 downto 6) = "111" then
 			   	t2 := r7;
 			end if;
-			t2 := t2(14 downto 0 ) & 0 ;
+			t2 := t2(14 downto 0 ) & '0' ;
 			-- Found R
 			 
 			-- get t3 by passing t1 and t2 to alu
-			-- ADL : alu port map ( t1,t2,"001",t3)
+			ADL_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 			
 			-- store the t3 value in coresponding register
 			if inp(5 downto 3) = "000" then
