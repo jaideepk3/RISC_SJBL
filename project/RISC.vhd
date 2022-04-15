@@ -312,6 +312,61 @@ if inp (15 downto 12) = "0001"  then
 		end if ;
 	end if ;
 
+ --ADI function	
+if inp (15 downto 12) = "0000"  then 
+		if inp(11 downto 9) = "000" then
+			t1 := r0;
+		elsif inp(11 downto 9) = "001" then
+			t1 := r1;
+		elsif inp(11 downto 9) = "010" then
+			t1 := r2;
+		elsif inp(11 downto 9) = "011" then
+			t1 := r3;
+		elsif inp(11 downto 9) = "100" then
+			t1 := r4;
+		elsif inp(11 downto 9) = "101" then
+			t1 := r5;
+		elsif inp(11 downto 9) = "110" then
+			t1 := r6;
+		elsif inp(11 downto 9) = "111" then
+			t1 := r7;                               
+		end if;
+			-- Found Ra			 
+		  
+		t2 := inp(5) & "0000000000" & inp(4 downto 0);
+		
+		
+	--	if inp(5)='0' then
+         -- ADD : alu port map ( t1,t2,"001",t3)
+		--elsif inp(5)= '1' then
+			-- SUBB : alu port map ( t1,t2,"001",t3)
+		--end if ;
+		
+      -- storing value in t2
+		-- ADI - alu port map (t1,t2,"001',t3 )
+      -- store the t3 value in coresponding register
+		
+		if inp(8 downto 6) = "000" then
+			r0 := t3;	
+		elsif inp(8 downto 6) = "001" then
+			r1 := t3;
+		elsif inp(8 downto 6) = "010" then
+			r2 := t3;
+		elsif inp(8 downto 6) = "011" then
+			r3:= t3;
+		elsif inp(8 downto 6) = "100" then
+			r4:= t3;
+		elsif inp(8 downto 6) = "101" then
+			r5:= t3;
+		elsif inp(8 downto 6) = "110" then
+			r6:= t3;
+		elsif inp(8 downto 6) = "111" then
+			r7:= t1;
+		end if;
+			-- Found Rb
+			 
+end if ;
+		
   --NDU function	
 if inp (15 downto 12) = "0010"  then 
 		if inp ( 1 downto 0) = "00") then
@@ -521,60 +576,6 @@ if inp (15 downto 12) = "0010"  then
 		end if ;
 	end if ;
 
- --ADI function	
-if inp (15 downto 12) = "0000"  then 
-		if inp(11 downto 9) = "000" then
-			t1 := r0;
-		elsif inp(11 downto 9) = "001" then
-			t1 := r1;
-		elsif inp(11 downto 9) = "010" then
-			t1 := r2;
-		elsif inp(11 downto 9) = "011" then
-			t1 := r3;
-		elsif inp(11 downto 9) = "100" then
-			t1 := r4;
-		elsif inp(11 downto 9) = "101" then
-			t1 := r5;
-		elsif inp(11 downto 9) = "110" then
-			t1 := r6;
-		elsif inp(11 downto 9) = "111" then
-			t1 := r7;                               
-		end if;
-			-- Found Ra			 
-		  
-		t2 := inp(5) & "0000000000" & inp(4 downto 0);
-		
-		
-	--	if inp(5)='0' then
-         -- ADD : alu port map ( t1,t2,"001",t3)
-		--elsif inp(5)= '1' then
-			-- SUBB : alu port map ( t1,t2,"001",t3)
-		--end if ;
-		
-      -- storing value in t2
-		-- ADI - alu port map (t1,t2,"001',t3 )
-      -- store the t3 value in coresponding register
-		
-		if inp(8 downto 6) = "000" then
-			r0 := t3;	
-		elsif inp(8 downto 6) = "001" then
-			r1 := t3;
-		elsif inp(8 downto 6) = "010" then
-			r2 := t3;
-		elsif inp(8 downto 6) = "011" then
-			r3:= t3;
-		elsif inp(8 downto 6) = "100" then
-			r4:= t3;
-		elsif inp(8 downto 6) = "101" then
-			r5:= t3;
-		elsif inp(8 downto 6) = "110" then
-			r6:= t3;
-		elsif inp(8 downto 6) = "111" then
-			r7:= t1;
-		end if;
-			-- Found Rb
-			 
-end if ;
  --LHI function
 if inp (15 downto 12) = "0011"  then 
 		t3 := inp(8 downto 0) & "0000000" ;
