@@ -102,7 +102,8 @@ begin
 	
 	--ADC function
 if inp (15 downto 12) = "0001"  then 
-		if inp ( 1 downto 0) = "10") then
+	if inp ( 1 downto 0) = "10") then
+		if  CC(1) = 1 then 
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -166,13 +167,14 @@ if inp (15 downto 12) = "0001"  then
 			 
 			 
 			 
-			 
-		end if ;
+		end if ; 
 	end if ;
+end if ;
 	
   --ADZ function
 if inp (15 downto 12) = "0001"  then 
-		if inp ( 1 downto 0) = "01") then
+	if inp ( 1 downto 0) = "01") then
+		if CC(0)= 1 then
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -237,9 +239,9 @@ if inp (15 downto 12) = "0001"  then
 			 
 			 
 			 
-			 
-		end if ;
+		end if ;	 
 	end if ;
+end if ;
 
 	--ADL function
 if inp (15 downto 12) = "0001"  then 
