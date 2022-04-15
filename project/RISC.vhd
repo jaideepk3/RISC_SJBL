@@ -281,7 +281,8 @@ if inp (15 downto 12) = "0001"  then
 			   	t2 := r6;
 			elsif inp(8 downto 6) = "111" then
 			   	t2 := r7;
-			end if;b
+			end if;
+			t2 := t2(14 downto 0 ) & 0 ;
 			-- Found R
 			 
 			-- get t3 by passing t1 and t2 to alu
