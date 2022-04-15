@@ -6,7 +6,7 @@ entity alu is
  Port ( 
 	 inp1 : in std_logic_vector(15 downto 0);
 	 inp2 : in std_logic_vector(15 downto 0); 
-	 op_sel : in std_logic_vector(1 downto 0);
+	 op_sel : in std_logic;
 	 outp : out std_logic_vector(15 downto 0);
 	 c : out std_logic;                             ---overflow flag
 	 z : out std_logic
@@ -19,7 +19,7 @@ begin
 	process(inp1,inp2,op_sel,temp_out)
 		begin
 			case op_sel is
-				when '00' =>
+				when '0' =>
 					temp_out <= std_logic_vector(signed(inp1) + signed(inp2));
 					output <= temp_out;
 					-------overflow logic-------------------
