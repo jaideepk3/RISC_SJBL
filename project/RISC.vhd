@@ -337,16 +337,9 @@ if inp (15 downto 12) = "0000"  then
 			-- Found Ra			 
 		  
 		t2 := inp(5) & "0000000000" & inp(4 downto 0);
-		
-		
-	--	if inp(5)='0' then
-         -- ADD : alu port map ( t1,t2,"001",t3)
-		--elsif inp(5)= '1' then
-			-- SUBB : alu port map ( t1,t2,"001",t3)
-		--end if ;
-		
       -- storing value in t2
-		-- ADI - alu port map (t1,t2,"001',t3 )
+               ADI_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
       -- store the t3 value in coresponding register
 		
 		if inp(8 downto 6) = "000" then
