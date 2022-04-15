@@ -16,7 +16,7 @@ architecture RISC_arc of RISC is
 
 
 
-	component ALU_siddhu is
+	component ALU is
 		port( inp1 : in std_logic_vector(15 downto 0);
 		      inp2 : in std_logic_vector(15 downto 0);
 				out1 : out std_logic_vector(15 downto 0);
