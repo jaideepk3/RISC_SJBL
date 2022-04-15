@@ -103,7 +103,7 @@ begin
 	--ADC function
 if inp (15 downto 12) = "0001"  then 
 	if inp ( 1 downto 0) = "10") then
-		if  CC(1) = 1 then 
+		if  CC(1) = '1' then 
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -174,7 +174,7 @@ end if ;
   --ADZ function
 if inp (15 downto 12) = "0001"  then 
 	if inp ( 1 downto 0) = "01") then
-		if CC(0)= 1 then
+		if CC(0)= '1' then
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -439,7 +439,8 @@ if inp (15 downto 12) = "0010"  then
 
  --NDC function	
 if inp (15 downto 12) = "0010"  then 
-		if inp ( 1 downto 0) = "10") then
+	if inp ( 1 downto 0) = "10") then
+		if CC(1) = '0' then		
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -478,7 +479,8 @@ if inp (15 downto 12) = "0010"  then
 			-- Found R
 			 
 			-- get t3 by passing t1 and t2 to alu
-			-- NDC : alu port map ( t1,t2,"001",t3)
+			NDC_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,'1'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 			
 			-- store the t3 value in coresponding register
 			if inp(5 downto 3) = "000" then
@@ -504,13 +506,14 @@ if inp (15 downto 12) = "0010"  then
 			 
 			 
 			 
-			 
-		end if ;
+		end if ;		 
 	end if ;
+end if ;
 
  --NDZ function	
 if inp (15 downto 12) = "0010"  then 
 	if inp ( 1 downto 0) = "01") then
+		if CC(0) = 1 then
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -549,7 +552,8 @@ if inp (15 downto 12) = "0010"  then
 			-- Found R
 			 
 			-- get t3 by passing t1 and t2 to alu
-			-- NDZ : alu port map ( t1,t2,"001",t3)
+			NDZ_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,'1'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 			
 			-- store the t3 value in coresponding register
 			if inp(5 downto 3) = "000" then
@@ -571,9 +575,9 @@ if inp (15 downto 12) = "0010"  then
 			end if;
 			-- Found Rc
 			 
-
 		end if ;
 	end if ;
+end if ;
 
  --LHI function
 if inp (15 downto 12) = "0011"  then 
