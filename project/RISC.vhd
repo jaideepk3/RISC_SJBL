@@ -71,7 +71,7 @@ begin
 			-- Found R
 			 
 			ADD_ALU : ALU
-			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 				
 			if inp(5 downto 3) = "000" then
 				r0 := t3;
@@ -142,7 +142,7 @@ if inp (15 downto 12) = "0001"  then
 			-- Found R
 			 
 			ADC_ALU : ALU
-			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 				
 			if inp(5 downto 3) = "000" then
 				r0 := t3;
@@ -212,7 +212,7 @@ if inp (15 downto 12) = "0001"  then
 			end if;b
 			-- Found R
 			ADZ_ALU : ALU
-			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 			-- get t3 by passing t1 and t2 to alu
 			-- ADZ : alu port map ( t1,t2,"001",t3)
 			
@@ -287,7 +287,7 @@ if inp (15 downto 12) = "0001"  then
 			 
 			-- get t3 by passing t1 and t2 to alu
 			ADL_ALU : ALU
-			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 			
 			-- store the t3 value in coresponding register
 			if inp(5 downto 3) = "000" then
@@ -341,7 +341,7 @@ if inp (15 downto 12) = "0000"  then
 		t2 := inp(5) & "0000000000" & inp(4 downto 0);
       -- storing value in t2
                ADI_ALU : ALU
-			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
       -- store the t3 value in coresponding register
 		
 		if inp(8 downto 6) = "000" then
@@ -406,7 +406,8 @@ if inp (15 downto 12) = "0010"  then
 			-- Found R
 			 
 			-- get t3 by passing t1 and t2 to alu
-			-- NDU : alu port map ( t1,t2,"001",t3)
+			 NDU_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,'1'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
 			
 			-- store the t3 value in coresponding register
 			if inp(5 downto 3) = "000" then
