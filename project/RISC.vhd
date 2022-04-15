@@ -20,7 +20,7 @@ architecture RISC_arc of RISC is
 		port(inp1 : in std_logic_vector(15 downto 0);
 	 inp2 : in std_logic_vector(15 downto 0); 
 	 op_sel : in std_logic_vector(1 downto 0);
-	 output : out std_logic_vector(15 downto 0);
+	 outp : out std_logic_vector(15 downto 0);
 	 c : out std_logic;                             ---overflow flag
 	 z : out std_logic );
 	end component;
