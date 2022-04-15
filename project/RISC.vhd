@@ -17,10 +17,12 @@ architecture RISC_arc of RISC is
 
 
 	component ALU is
-		port( inp1 : in std_logic_vector(15 downto 0);
-		      inp2 : in std_logic_vector(15 downto 0);
-				out1 : out std_logic_vector(15 downto 0);
-				out2 : out std_logic_vector(15 downto 0) );
+		port(inp1 : in std_logic_vector(15 downto 0);
+	 inp2 : in std_logic_vector(15 downto 0); 
+	 op_sel : in std_logic_vector(1 downto 0);
+	 output : out std_logic_vector(15 downto 0);
+	 c : out std_logic;                             ---overflow flag
+	 z : out std_logic );
 	end component;
 
 
