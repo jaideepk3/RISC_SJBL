@@ -70,10 +70,9 @@ begin
 			end if;b
 			-- Found R
 			 
-			-- get t3 by passing t1 and t2 to alu
-			-- ADD : alu port map ( t1,t2,"001",t3)
-			
-			-- store the t3 value in coresponding register
+			ADD_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+				
 			if inp(5 downto 3) = "000" then
 				r0 := t3;
 			elsif inp(5 downto 3) = "001" then
@@ -141,10 +140,9 @@ if inp (15 downto 12) = "0001"  then
 			end if;b
 			-- Found R
 			 
-			-- get t3 by passing t1 and t2 to alu
-			-- ADC : alu port map ( t1,t2,"001",t3)
-			
-			-- store the t3 value in coresponding register
+			ADD_ALU : ALU
+			port map(t1=>inp1,t2=>inp2,"0"=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
+				
 			if inp(5 downto 3) = "000" then
 				r0 := t3;
 			elsif inp(5 downto 3) = "001" then
