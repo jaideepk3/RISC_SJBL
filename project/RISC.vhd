@@ -76,8 +76,8 @@ begin
 			-- Found R
 			 
 			ADD_ALU : ALU
+		if (CLK'event and (CLK='1')) then 
 			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
-		if (CLK'event and (CLK='1')) then 	
 			if inp(5 downto 3) = "000" then
 				r0 := t3;
 			elsif inp(5 downto 3) = "001" then
