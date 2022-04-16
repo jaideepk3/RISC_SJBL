@@ -753,26 +753,31 @@ if inp(15 down to 12) = "1000" then
 		
 -- JAL function
 if inp(15 downto 12) = "1001" then
-    --  t3 = inp(5) & "0000000000" & inp(4 downto 0)
-    --      r7 = r7 + t3;
+      t1 := inp(5) & "0000000000" & inp(4 downto 0);
+      t2:= r7;
+   JAL_ALU: ALU
+   port map(t1=>inp1,t2=>inp2,op_sel=>'0',outp=>t3,CC(1)=>c,CC(0)=>z);
+   r7 := t3;
+   PC_ALU: ALU 
+   port map(t2=>inp1,"0000000000000001"=>inp2,op_sel=>'0',outp=>t1,CC(1)=>c,CC(0)=>z);
 
-    t3 = r7 + 1;
+  
     if inp(11 downto 9) = "000" then
-    	r0 := t3;	
+    	r0 := t1;	
 	elsif inp(11 downto 9) = "001" then
-		r1 := t3;
+		r1 := t1;
 	elsif inp(11 downto 9) = "010" then
-		r2 := t3;
+		r2 := t1;
 	elsif inp(11 downto 9) = "011" then
-		r3:= t3;
+		r3:= t1;
 	elsif inp(11 downto 9) = "100" then
-		r4:= t3;
+		r4:= t1;
 	elsif inp(11 downto 9) = "101" then
-		r5:= t3;
+		r5:= t1;
 	elsif inp(11 downto 9) = "110" then
-		r6:= t3;
+		r6:= t1;
 	elsif inp(11 downto 9) = "111" then
-		r7:= t3;
+		r7:= t1;
 	end if;
 
 
