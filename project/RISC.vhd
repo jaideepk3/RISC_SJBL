@@ -34,10 +34,12 @@ begin
 	if inp (15 downto 12) = "0001"  then 
 	 
 		if inp ( 1 downto 0) = "00" then
+		  if (CLK'event and (CLK='1')) then 
 		  t2 := r7;
 	          PC_ALU : ALU
 	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
 	          r7 := t3;
+                  end if;
 			if inp(11 downto 8) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -108,10 +110,12 @@ begin
 	--ADC function
 if inp (15 downto 12) = "0001"  then 
 	if inp ( 1 downto 0) = "10") then
-		t2 := r7;
-	        PC_ALU : ALU
-	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
-	        r7 := t3;
+		if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 		if  CC(1) = '1' then 
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
@@ -183,10 +187,12 @@ end if ;
   --ADZ function
 if inp (15 downto 12) = "0001"  then 
 	if inp ( 1 downto 0) = "01") then
-		t2 := r7;
-	        PC_ALU : ALU
-	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
-	        r7 := t3;
+		if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 		if CC(0)= '1' then
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
@@ -260,10 +266,12 @@ end if ;
 	--ADL function
 if inp (15 downto 12) = "0001"  then 
 		if inp ( 1 downto 0) = "11") then
-		t2 := r7;
-	        PC_ALU : ALU
-	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
-	        r7 := t3;
+		if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -336,10 +344,12 @@ if inp (15 downto 12) = "0001"  then
 
  --ADI function	
 if inp (15 downto 12) = "0000"  then 
-	        t2 := r7;
-	        PC_ALU : ALU
-	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
-	        r7 := t3;
+	       if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 		if inp(11 downto 9) = "000" then
 			t1 := r0;
 		elsif inp(11 downto 9) = "001" then
@@ -389,6 +399,12 @@ end if ;
   --NDU function	
 if inp (15 downto 12) = "0010"  then 
 		if inp ( 1 downto 0) = "00") then
+		  if (CLK'event and (CLK='1')) then 
+		   t2 := r7;
+	           PC_ALU : ALU
+	           port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	           r7 := t3;
+                   end if;
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -461,6 +477,12 @@ if inp (15 downto 12) = "0010"  then
  --NDC function	
 if inp (15 downto 12) = "0010"  then 
 	if inp ( 1 downto 0) = "10") then
+		if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 		if CC(1) = '0' then		
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
@@ -534,6 +556,12 @@ end if ;
  --NDZ function	
 if inp (15 downto 12) = "0010"  then 
 	if inp ( 1 downto 0) = "01") then
+		if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 		if CC(0) = 1 then
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
@@ -602,6 +630,12 @@ end if ;
 
  --LHI function
 if inp (15 downto 12) = "0011"  then 
+	        if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 		t3 := inp(8 downto 0) & "0000000" ;
 
 	-- load t3 to register
@@ -628,6 +662,12 @@ end if ;
 	
 --LW function
 if inp(15 downto 12) = "0111" then
+	  if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
 	t1 := inp(5) & "0000000000" & inp(4 downto 0);
   --load t2 with register
        if inp(8 downto 6) = "000" then
@@ -678,6 +718,12 @@ end if;
   
 --SW function
    if inp(15 downto 12) = "0101" then  
+     if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
      t1 := inp(5) & "0000000000" & inp(4 downto 0);
  --load t2 with register
        if inp(8 downto 6) = "000" then
@@ -727,6 +773,12 @@ end if;
 	
 --BEQ function
 if inp(15 down to 12) = "1000" then
+	if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
     -- load t1 with register A
         if inp(11 downto 9) = "000" then
             t1 := r0;
@@ -773,6 +825,12 @@ if inp(15 down to 12) = "1000" then
 		
 -- JAL function
 if inp(15 downto 12) = "1001" then
+      if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
       t1 := inp(5) & "0000000000" & inp(4 downto 0);
       t2:= r7;
    JAL_ALU: ALU
@@ -805,6 +863,12 @@ if inp(15 downto 12) = "1001" then
 
 -- JLR function
 if inp(15 downto 12) = "1010" then
+    if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
     if inp(8 downto 6) = "000" then
         t2 := r0;
     elsif inp(8 downto 6) = "001" then
@@ -849,6 +913,12 @@ if inp(15 downto 12) = "1010" then
 
 -- JRI function
 if inp(15 downto 12) = "1011" then
+	if (CLK'event and (CLK='1')) then 
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
+                  end if;
     if inp(11 downto 9) = "000" then
         t1 := r0;
     elsif inp(11 downto 9) = "000" then
