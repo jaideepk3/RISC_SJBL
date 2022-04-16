@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 entity RISC is 
  port ( inp : in std_logic_vector(15 downto 0);
         out1 : out std_logic_vector(15 downto 0);
-		  out2 : out std_logic_vector(15 downto 0) )  ;
+	out2 : out std_logic_vector(15 downto 0) )  ;
 	end RISC ;
 
 architecture RISC_arc of RISC is	
