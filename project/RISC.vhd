@@ -32,7 +32,10 @@ architecture RISC_arc of RISC is
 begin
 	--ADD function
 	if inp (15 downto 12) = "0001"  then 
-	
+	  t2 := r7;
+	 PC_ALU : ALU
+	 port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	r7 := t3;
 		if inp ( 1 downto 0) = "00" then
 			if inp(11 downto 8) = "000" then
 				t1 := r0;
