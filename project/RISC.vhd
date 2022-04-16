@@ -4,6 +4,7 @@ use IEEE.numeric_std.all;
 
 entity RISC is 
  port ( inp : in std_logic_vector(15 downto 0);
+       clk : in std_logic ;
         out1 : out std_logic_vector(15 downto 0);
 	out2 : out std_logic_vector(15 downto 0) )  ;
 	end RISC ;
@@ -72,7 +73,7 @@ begin
 			 
 			ADD_ALU : ALU
 			port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
-				
+		if (CLK'event and (CLK='1')) then 	
 			if inp(5 downto 3) = "000" then
 				r0 := t3;
 			elsif inp(5 downto 3) = "001" then
@@ -91,7 +92,7 @@ begin
 			   r7 := t3;
 			end if;
 			-- Found Rc
-			 
+		end if ; 
 			 
 			 
 			 
