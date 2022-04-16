@@ -32,11 +32,12 @@ architecture RISC_arc of RISC is
 begin
 	--ADD function
 	if inp (15 downto 12) = "0001"  then 
-	  t2 := r7;
-	 PC_ALU : ALU
-	 port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
-	r7 := t3;
+	 
 		if inp ( 1 downto 0) = "00" then
+		  t2 := r7;
+	          PC_ALU : ALU
+	          port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	          r7 := t3;
 			if inp(11 downto 8) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -107,6 +108,10 @@ begin
 	--ADC function
 if inp (15 downto 12) = "0001"  then 
 	if inp ( 1 downto 0) = "10") then
+		t2 := r7;
+	        PC_ALU : ALU
+	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	        r7 := t3;
 		if  CC(1) = '1' then 
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
@@ -178,6 +183,10 @@ end if ;
   --ADZ function
 if inp (15 downto 12) = "0001"  then 
 	if inp ( 1 downto 0) = "01") then
+		t2 := r7;
+	        PC_ALU : ALU
+	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	        r7 := t3;
 		if CC(0)= '1' then
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
@@ -251,6 +260,10 @@ end if ;
 	--ADL function
 if inp (15 downto 12) = "0001"  then 
 		if inp ( 1 downto 0) = "11") then
+		t2 := r7;
+	        PC_ALU : ALU
+	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	        r7 := t3;
 			if inp(11 downto 9) = "000" then
 				t1 := r0;
 			elsif inp(11 downto 9) = "001" then
@@ -323,6 +336,10 @@ if inp (15 downto 12) = "0001"  then
 
  --ADI function	
 if inp (15 downto 12) = "0000"  then 
+	        t2 := r7;
+	        PC_ALU : ALU
+	        port map(t2=>inp1,"00000000000000001"=>inp2,op_sel=>'0',t3=>outp,CC(1)=>c,CC(0)=>z);
+	        r7 := t3;
 		if inp(11 downto 9) = "000" then
 			t1 := r0;
 		elsif inp(11 downto 9) = "001" then
