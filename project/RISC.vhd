@@ -626,8 +626,9 @@ if inp(15 downto 12) = "0111" then
       elsif inp(8 downto 6) = "111" then
 	 	t2 := r7;
        end if;	
-	       --ADD t2 and t1;
-	       --t3=t2+t1;
+	 --ADD t1 and t2 , store in t3
+   LW_ALU: ALU
+   port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
    signal mem_location : std_logic_vector(15 downto 0);
    signal mem_loc_int : integer;
         mem_location := t3;
@@ -677,9 +678,10 @@ end if;
        end if;	
 	     --ADD t2 and t1;
 	       --t3=t2+t1;
+      SW_ALU: ALU
+      port map(t1=>inp1,t2=>inp2,'0'=>op_sel,outp=>t3,CC(1)=>c,CC(0)=>z);
 	       
-	       
-       if inp(11 downto 9) = "000" then
+      if inp(11 downto 9) = "000" then
 		t1 := r0;
       elsif inp(11 downto 9) = "001" then
 		t1 := r1;
@@ -701,6 +703,7 @@ end if;
     MM((mem_loc_int+15) downto mem_loc_int)) := t1;
 end if;
 
+	
 --BEQ function
 if inp(15 down to 12) = "1000" then
     -- load t1 with register A
@@ -740,9 +743,13 @@ if inp(15 down to 12) = "1000" then
             t2 := r7;
         end if;	
         
-        --  t3 = inp(5) & "0000000000" & inp(4 downto 0)
-        --  if t1 = t2 then
-        --      r7 = r7 + t3
+        t3 = inp(5) & "0000000000" & inp(4 downto 0)
+        if t1 = t2 then
+            --r7 = r7 + t3
+	BEQ_ALU: ALU
+	port map(r7=>inp1,t3=>inp2,'0'=>op_sel,r7=>outp,CC(1)=>c,CC(0)=>z);
+		
+		
 -- JAL function
 if inp(15 downto 12) = "1001" then
     --  t3 = inp(5) & "0000000000" & inp(4 downto 0)
@@ -836,6 +843,8 @@ if inp(15 downto 12) = "1011" then
 
     t2 := inp(5) & "0000000000" & inp(4 downto 0);
     -- t3 = t2 + t1;
+    JRI_ALU: ALU
+    port map(t1=>inp1,t2=>inp2,'0'=>op_sel,t3=>outp,CC(1)=>c,CC(0)=>z);
     r7 = t3;
     
     
